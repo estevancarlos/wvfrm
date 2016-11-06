@@ -1,0 +1,18 @@
+.menu {
+  @at-root #{&}__img {
+    color: black;
+  }
+  @at-root #{&}__option {
+
+  }
+  @at-root #{&}_size_wide {
+    @at-root #{&}__option {
+      display: inline-block;
+    }
+  }
+  @at-root #{&}_size_tall {
+    @at-root #{&}__option {
+      display: inline-block;
+    }
+  }
+}

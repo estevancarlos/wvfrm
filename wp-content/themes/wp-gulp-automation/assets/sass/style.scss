@@ -1,0 +1,238 @@
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap';
+@import '../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap-compass';
+@import "compass/layout/stretching";
+@import "compass/css3";
+@import "compass/utilities";
+@import 'helpers/_variables.scss';
+@import 'helpers/_helpers.scss';
+@import 'layout/_grid';
+@import 'layout/_layout-search';
+@import 'layout/_related-region';
+@import 'layout/_layout-page';
+@import 'layout/_layout-tutorial';
+@import 'components/_cards';
+@import 'components/_buttons';
+@import 'components/_menu';
+@import 'components/_sub-header';
+@import 'components/_tips';
+@import 'components/_header';
+@import 'base/_typography';
+@import 'vendor/_ultimatesearch';
+
+/*
+Theme Name: wvfrm
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wvfrm
+Tags:
+
+*/
+
+html {
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin: 0;
+  height: 100%;
+}
+
+#page {
+  @include background-image(linear-gradient($wv-blue, #1f32ab));
+
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -webkit-animation: fadein 2s; /* Safari and Chrome */
+  -o-animation: fadein 2s; /* Opera */
+}
+
+.page-header {
+  margin: auto;
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+#primary-video {
+  margin-top: 35px;
+}
+
+#home {
+  .searchandfilter li:first-child,
+  .searchandfilter li:nth-child(2){
+    border: 2px solid #fff;
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .postform {
+    background: transparent;
+    padding: 20px;
+    border: none;
+    color: #fff;
+    font-family: 'rubik';
+    font-size: 20px;
+  }
+}
+
+.related-region-container {
+  padding: 60px 0px;
+}
+
+.search-prompt {
+  padding: 175px 0 70px 0;
+}
+
+
+/*
+.archive-color:nth-child(2n-1) {
+  background-color: $wv-med-blue;
+}
+
+.archive-color:nth-child(2n) {
+  background-color: $wv-blue-lighter;
+}
+*/
+
+.archive-color {
+  transition: all 1s;
+  background-color: #fff;
+  border-bottom: 1px solid $wv-light-blue;
+}
+
+.archive-color:hover {
+  background-color: $wv-red;
+}
+
+article.tutorial > header {
+  padding: 35px 0;
+}
+
+.border {
+  background-color: $wv-light-blue;
+  padding: 0;
+  margin: 0 15px;
+  height: 2px;
+  width: calc(100% - 30px);
+}
+
+ul#primary-menu {
+  padding:0;
+
+  li {
+    display: inline-block;
+  }
+}
+
+.main-navigation {
+  text-align: right;
+}
+
+.border.wide {
+  height: 1px;
+}
+
+.entry-overview {
+  float: right;
+}
+
+.content-spacing {
+  padding: 35px 0;
+}
+
+.entry-content-tips {
+  ul {
+    padding: 0 0px 0 20px;
+  }
+}
+
+.entry-subtitle {
+  min-height: 100px;
+}
+
+.entry-meta {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.site-info {
+  margin-top: 100px;
+}
+
+.site-header {
+  padding-top: 25px;
+  padding-bottom: 16px;
+  background-color: $wv-blue;
+  position: fixed;
+  z-index: 100;
+  @include single-box-shadow(0px, 4px, 30px, 0px, rgba(0, 0, 0, 0.25));
+}
+
+.listing-item {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  transition: all 1s;
+
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+.tertiary-content {
+  section {
+    margin-top: 70px;
+  }
+}
+
+
+
+@media (max-width: $screen-md-min) {
+  body {
+    font-size: 14px;
+  }
+
+  #primary {
+    padding-top: 0;
+  }
+
+  .site-header {
+    position: static;
+  }
+
+  .entry-subtitle {
+    border: 0;
+    min-height: auto;
+  }
+
+  .entry-overview {
+    border-left: none;
+
+    p {
+      padding: 15px 0px;
+    }
+  }
+
+  .content-spacing {
+    padding: 0;
+  }
+
+}
+
+@media (max-width: $screen-sm-min) {
+  #primary-video {
+    margin-top: 0;
+  }
+
+  .wrap-video-bg {
+    background: $wv-blue;
+  }
+}

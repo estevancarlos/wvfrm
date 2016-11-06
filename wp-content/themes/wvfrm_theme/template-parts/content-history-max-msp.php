@@ -1,0 +1,1 @@
+<p>Max/MSP is a visual programming language that originated as a research project from <a href="http://msp.ucsd.edu/" target="_blank">Miller Puckette</a> during his time at <a href="http://www.ircam.fr/" target="_blank">IRCAM</a>, the french institute for experimental music, during the 1980s.</p>

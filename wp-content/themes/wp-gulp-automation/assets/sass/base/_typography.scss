@@ -1,0 +1,181 @@
+body {
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-weight: 400;
+  color: $wv-blue-dark;
+
+  a {
+    color: $wv-med-blue;
+    text-decoration: none;
+  }
+}
+
+h4 {
+  font-size: 1.0em;
+  font-weight: 700;
+}
+
+p, li {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+
+/* Font Awesome */
+a i.fa {
+  font-size: 75%;
+  padding: 5px;
+  display: inline-table;
+  vertical-align: bottom;
+}
+
+aside li i.fa {
+  position: relative;
+}
+
+aside ul li p {
+  color: $gray-light;
+}
+
+.content-card__title {
+  font-size: 1.4em;
+}
+
+a.btn-fill {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#masthead {
+  h1{
+    margin: 0;
+  }
+}
+
+#home {
+  .landingpage-content h1 {
+    color: #fff;
+  }
+}
+
+#primary-menu {
+  li {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+
+  a {
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+}
+
+
+.content-card__title {
+  color: $gray;
+}
+
+
+.video-details {
+  h1, h2, h3, h4, p {
+    color: #fff;
+  }
+
+  a {
+    color: $wv-link-blue;
+  }
+}
+
+
+
+#secondary {
+    color: #fff;
+}
+
+.subject-list,
+.technology-list {
+  font-size: 1.4em;
+}
+
+.archive-title {
+  font-size: 48px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+.supplemental-content {
+  aside p, aside li {
+    font-size: 1em;
+    line-height: 1.3em;
+  }
+}
+
+.supplemental-content-primary {
+  a {
+    color: $wv-blue;
+    background-color: $wv-yellow;
+    text-decoration: none;
+  }
+
+  a:hover {
+    background-color: yellow;
+  }
+
+  p, li {
+    color: $gray;
+  }
+}
+
+.related-posts-container {
+  color: #fff;
+}
+
+.related-region h5 {
+  color: $wv-light-blue;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.related-box--item {
+  font-size: 28px;
+  line-height: 30px;
+}
+
+
+
+div[class^="entry-content-"] {
+  p, li {
+    font-size: 20px;
+    line-height: 28px;
+    margin-top: -6px;
+  }
+}
+
+.search-prompt {
+  h1 {
+    font-family: 'Rubik', 'Helvetica', sans-serif;
+    font-size: 72px;
+  }
+}
+
+#uwpqsf_id {
+  span[class^="taxolabel-"] {
+    font-family: 'Rubik', 'Helvetica', sans-serif;
+    font-size: 28px;
+    color: #fff;
+  }
+
+  select {
+    font-size: 18px;
+  }
+}

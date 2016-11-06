@@ -1,0 +1,11 @@
+.btn-wv {
+  @at-root #{&}__tag {
+    color: black;
+  }
+  @at-root #{&}__item {
+    color: red;
+  }
+  @at-root #{&}__cta {
+    color: red;
+  }
+}

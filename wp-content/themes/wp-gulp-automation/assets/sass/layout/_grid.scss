@@ -1,0 +1,274 @@
+$grid-columns:        12;
+$grid-gutter-width:   30px;
+
+$screen-xs-min:       480px;
+$screen-sm-min:       768px;
+$screen-md-min:       992px;
+$screen-lg-min:       1360px;
+$screen-xl-min:       1600px;
+
+.results-region-container {
+  @include container-fixed();
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+  /* Rows */
+  .results-region {
+    @include make-row();
+  }
+
+  /* Columns */
+  .results-region > article {
+    @include make-xs-column(4);
+  }
+
+  .results-region .taxonomy-list {
+    @include make-xs-column(12);
+  }
+
+}
+
+.site-header {
+
+  /* Container */
+  @include container-fixed();
+  @media (min-width: $screen-sm-min) {
+    width: 100%;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 100%;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 100%;
+  }
+
+  /* Rows */
+  section {
+    @include make-row();
+  }
+
+  /* Columns */
+  .site-branding {
+    @include make-xs-column(3);
+  }
+
+  .main-navigation {
+    @include make-xs-column(9);
+  }
+}
+
+
+.tutorial {
+  /* Top Section */
+
+  /* Container */
+  .video-region-container > section {
+    @include container-fixed();
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+    }
+
+    /* Rows */
+    .video-details > section:nth-child(1),
+    .video-details > section:nth-child(2) {
+      @include make-row();
+    }
+
+    /* Columns */
+    .video-details header {
+      @include make-xs-column(9);
+    }
+
+    .video-details aside {
+      @include make-xs-column(3);
+    }
+
+    .video-details .tutorial-overview {
+      @include make-xs-column(9);
+      float: right;
+    }
+
+    .video-details .tutorial-taxonomy {
+      @include make-xs-column(3);
+      float: left;
+    }
+  }
+
+  /* Middle Section */
+  .related-region-container section {
+    @include container-fixed();
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-md-min + 200) {
+      width: $container-lg;
+    }
+    @media (min-width: $screen-lg-min + 400) {
+      width: $container-lg + 400;
+    }
+
+    /* Rows */
+    .related-region {
+      @include make-row();
+    }
+
+    /* Columns */
+    .related-region {
+      .content-card-container {
+        @include make-xs-column(3);
+      }
+    }
+  }
+
+  /* Bottom Section */
+  .supplemental-region-container > section {
+    @include container-fixed();
+    @media (min-width: $screen-sm-min) {
+      width: $container-sm;
+    }
+    @media (min-width: $screen-md-min) {
+      width: $container-md;
+    }
+    @media (min-width: $screen-lg-min) {
+      width: $container-lg;
+    }
+  }
+
+  /* Rows */
+  .supplemental-content {
+    @include make-row();
+  }
+
+  /* Columns */
+  header {
+    @include make-xs-column(12);
+  }
+
+  .supplemental-content {
+    aside {
+      @include make-xs-column(3);
+    }
+
+    .supplemental-content-primary {
+      @include make-xs-column(9);
+    }
+  }
+
+}
+
+
+
+
+
+
+/*
+#page > header,
+#page > footer,
+.page-header,
+article {
+  @include container-fixed();
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+.fluid {
+  @include container-fixed();
+  @media (min-width: $screen-sm-min) {
+    width: 100%;
+  }
+  @media (min-width: $screen-md-min) {
+    width: 100%;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: 100%;
+  }
+}
+
+article > header,
+section {
+  @include make-row();
+}
+
+.border,
+.site-info,
+.listing-item,
+.page-header header,
+aside,
+.landingpage-content {
+  @include make-xs-column(12);
+}
+
+.entry-header {
+  @include make-md-column(9);
+}
+
+.entry-social {
+  @include make-md-column(3);
+}
+
+.site-branding {
+  @include make-md-column(7);
+  @include make-xs-column(12);
+}
+
+.main-navigation {
+  @include make-md-column(5);
+  @include make-xs-column(12);
+}
+
+.subject-list,
+.technology-list {
+  @include make-xs-column(6);
+}
+
+.related-posts-container .content-card-container {
+  @include make-xs-column(12);
+  @include make-md-column(3);
+}
+
+.entry-overview {
+  @include make-md-column(8);
+  @include make-xs-column(12);
+}
+
+.entry-tax-group {
+  @include make-md-column(4);
+  @include make-xs-column(12);
+}
+
+.entry-subtitle {
+  @include make-xs-column(12);
+  @include make-md-column(3);
+}
+
+section > div[class^="entry-content-"] {
+  @include make-xs-column(12);
+  @include make-md-column(9);
+}
+*/
+
+
+
+/* Grid */
+
+

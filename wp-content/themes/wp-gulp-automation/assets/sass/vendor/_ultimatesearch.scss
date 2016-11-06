@@ -1,0 +1,58 @@
+#uwpqsf_id {
+  border: none;
+
+  #tax-select-0,
+  #tax-select-1 {
+    margin: 0 10px 0 0;
+    width: inherit;
+    float: left;
+    clear: none;
+  }
+
+  #tdp-0,
+  #tdp-1,
+  .uwpqsf_submit {
+    float: left;
+    width: initial;
+    margin: 0;
+    clear: none;
+  }
+
+  .uwpqsf_class > span[class*='taxolabel-'],
+  .uwpqsf_class > span[class*='cmflabel-'] {
+    width: inherit;
+    float: left;
+  }
+
+  select {
+    background: url('images/icons.png') no-repeat 95% 50%;
+    background-size: 8%;
+    border: 2px solid #fff;
+    padding: 12px 30px 12px 12px;
+    color: #fff;
+    position: relative;
+    bottom: 6px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+
+  .uwpqsf_class > span[class*='taxolabel-'], .uwpqsf_class > span[class*='cmflabel-'] {
+    padding: 0 10px 0 0;
+  }
+}
+
+#uwpqsf_id_btn {
+  background: #FF5B5B;
+  border: none;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 18px;
+  margin: 0 10px;
+  position: relative;
+  bottom: 4px;
+}
+
+::-ms-expand {
+  display: none;
+}

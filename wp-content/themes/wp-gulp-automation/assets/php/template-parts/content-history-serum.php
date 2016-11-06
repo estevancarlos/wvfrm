@@ -1,0 +1,1 @@
+<p>Created by Xfer Records, Serum is their first actual synthesizer and has proven to be very popular.</p>
