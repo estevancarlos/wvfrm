@@ -96,11 +96,12 @@
                         <ul>
                             <?php
                             $terms = wp_get_post_terms( $post_ID, 'subject' );
-
-                            foreach ($terms as $term) {
-                                $term_url = esc_url( get_term_link( $term->slug, 'subject' ) );
-                                $term_link = sprintf('<a href="' . $term_url . '">');
-                                echo '<li>' . $term_link . $term->name . '</a></li>';
+                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                foreach ($terms as $term) {
+                                    $term_url = esc_url(get_term_link($term->slug, 'subject'));
+                                    $term_link = sprintf('<a href="' . $term_url . '">');
+                                    echo '<li>' . $term_link . $term->name . '</a></li>';
+                                }
                             }
                             ?>
                         </ul>
@@ -110,11 +111,12 @@
                         <ul>
                             <?php
                             $terms = wp_get_post_terms( $post_ID, 'technology' );
-
-                            foreach ($terms as $term) {
-                                $term_url = esc_url( get_term_link( $term->slug, 'technology' ) );
-                                $term_link = sprintf('<a href="' . $term_url . '">');
-                                echo '<li>' . $term_link . $term->name . '</a></li>';
+                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                foreach ($terms as $term) {
+                                    $term_url = esc_url(get_term_link($term->slug, 'technology'));
+                                    $term_link = sprintf('<a href="' . $term_url . '">');
+                                    echo '<li>' . $term_link . $term->name . '</a></li>';
+                                }
                             }
                             ?>
                         </ul>

@@ -62,7 +62,10 @@
                         </a>
                     </h3>
                 </div>
-            <?php endif;
+            <?php
+                endif;
+                the_excerpt();
+                echo get_the_tag_list('<p>Tags: ',', ','</p>');
             ?>
         </header>
 
@@ -84,10 +87,6 @@
     <!-- Tutorial date and Description -->
     <section>
         <aside class="tutorial-overview">
-            <div class="tutorial-date">
-                <?php wvfrm_posted_on(); ?>
-            </div>
-
             <div class="tutorial-description">
                 <?php
                 the_content( sprintf(
@@ -96,33 +95,6 @@
                         array( 'span' => array( 'class' => array() ) )
                     )
                 ) );
-                ?>
-            </div>
-        </aside>
-        <aside class="tutorial-taxonomy">
-            <div class="subject-list">
-                <h4>Subject</h4>
-                <?php
-                $terms = wp_get_post_terms(get_the_ID(), 'subject', 'orderby=count&hide_empty=0' );
-                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                    foreach ( $terms as $term ) { ?>
-                        <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                            <?php echo $term->name; ?>
-                        </a>
-                    <?php }
-                }
-                ?>
-
-                <h4>Technology</h4>
-                <?php
-                $terms = wp_get_post_terms(get_the_ID(), 'technology', 'orderby=count&hide_empty=0' );
-                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                    foreach ( $terms as $term ) { ?>
-                        <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                            <?php echo $term->name; ?>
-                        </a>
-                    <?php }
-                }
                 ?>
             </div>
         </aside>
@@ -202,33 +174,6 @@
                                         array( 'span' => array( 'class' => array() ) )
                                     )
                                 ) );
-                                ?>
-                            </div>
-                        </aside>
-                        <aside class="tutorial-taxonomy">
-                            <div class="subject-list">
-                                <h4>Subject</h4>
-                                <?php
-                                $terms = wp_get_post_terms(get_the_ID(), 'subject', 'orderby=count&hide_empty=0' );
-                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                    foreach ( $terms as $term ) { ?>
-                                        <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                                            <?php echo $term->name; ?>
-                                        </a>
-                                    <?php }
-                                }
-                                ?>
-
-                                <h4>Technology</h4>
-                                <?php
-                                $terms = wp_get_post_terms(get_the_ID(), 'technology', 'orderby=count&hide_empty=0' );
-                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                    foreach ( $terms as $term ) { ?>
-                                        <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                                            <?php echo $term->name; ?>
-                                        </a>
-                                    <?php }
-                                }
                                 ?>
                             </div>
                         </aside>
