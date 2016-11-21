@@ -7,6 +7,17 @@ $screen-md-min:       992px;
 $screen-lg-min:       1360px;
 $screen-xl-min:       1600px;
 
+@mixin make-col-offset($size, $columns: $grid-columns) {
+  margin-left: percentage($size / $columns);
+}
+
+@mixin make-col-push($size, $columns: $grid-columns) {
+  left: if($size > 0, percentage($size / $columns), auto);
+}
+
+@mixin make-col-pull($size, $columns: $grid-columns) {
+  right: if($size > 0, percentage($size / $columns), auto);
+}
 
 .header header {
   @include container-fixed();
@@ -77,7 +88,8 @@ $screen-xl-min:       1600px;
 }
 
 
-.video article:first-of-type {
+
+.video article {
   @include container-fixed();
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
@@ -95,6 +107,17 @@ $screen-xl-min:       1600px;
 }
 
 .video__details {
+  header {
+    @include make-md-column(8);
+    @include make-col-offset(1);
+  }
+
+  aside {
+    @include make-md-column(2);
+  }
+}
+
+.article article {
   @include container-fixed();
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
@@ -110,17 +133,15 @@ $screen-xl-min:       1600px;
     @include make-row();
   }
 
-  section:first-of-type header {
-    @include make-xs-column(10);
+  .left-col {
+    @include make-md-column(7);
+    @include make-col-offset(1);
   }
 
-  section:first-of-type aside {
-    @include make-xs-column(2);
+  .right-col {
+    @include make-md-column(3);
   }
-
 }
-
-
 
 
 

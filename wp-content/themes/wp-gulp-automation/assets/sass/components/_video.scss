@@ -1,11 +1,18 @@
 .video {
-  position: relative;
   z-index: 100;
   overflow: visible;
 
-  @include wv-gradient-bg();
+  .video_bg {
+    @include wv-gradient-bg();
+    z-index: 100;
+    overflow: visible;
+  }
 
-  article, section {
+  .video_bg section {
+    overflow: visible;
+  }
+
+  article {
     position: relative;
     z-index: 100;
     overflow: visible !important;

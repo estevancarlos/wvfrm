@@ -25,3 +25,4 @@ wp-content/plugins/custom-post-type-ui/readme.txt
 wp-content/plugins/advanced-custom-fields/readme.txt
 wp-content/themes/wp-gulp-automation/node_modules/
 wp-content/themes/wp-gulp-automation/.sass-cache/
+/wp-config-sample.php
