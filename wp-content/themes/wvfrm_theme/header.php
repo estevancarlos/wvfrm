@@ -41,6 +41,11 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+    global $wp_query;
+    $post_ID = $wp_query->post->ID;
+?>
+
 <div id="fb-root"></div>
 <script>
     (function(d, s, id) {
@@ -54,29 +59,54 @@
 
 <div id="page" class="site">
 
-    <header id="masthead" class="site-header fluid" role="banner">
-
+    <div class="header">
+        <header>
             <section>
-                <div class="site-branding">
-                    <?php
-                    if ( is_front_page() && is_home() ) : ?>
-                        <h1 class="site-title">
-                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-                                Logo
-                            </a>
-                        </h1>
-                    <?php endif; ?>
-                </div><!-- .site-branding -->
+                <div class="logo header__logo"><!-- header__logo el for positioning -->
+                    <div class="logo__img">
+                        Logo
+                    </div>
+                </div>
+                <div class="menu header__menu">
+                    <?php wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'container' => '',
+                        'menu_class' => 'menu_size-wide',
+                        'walker' => new Walker_Quickstart_Menu(),
+                    ) ); ?>
+                </div>
+                <div class="search header__search">
 
-                <nav id="site-navigation" class="main-navigation" role="navigation">
-                    <!-- button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" -->
-                    <!-- ?php esc_html_e( 'Primary Menu', 'wvfrm' ); ? -->
-                    <!-- /button -->
-                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-                </nav><!-- #site-navigation -->
-
+                </div>
+                <div class="header__sign-up">
+                    <button class="btn-wv btn-wv__cta">
+                        Sign-Up for our Newsletter
+                    </button>
+                </div>
             </section>
+        </header>
+    </div>
 
-        </header><!-- #masthead -->
+    <div class="sub-header">
+        <header>
+            <section>
+                <div class="sub-header__tags">
+                    <div class="sub-header__tags__tech">
+                        Technology
+                        <ul>
+                            <?php get_the_terms($post_ID, 'technology'); ?>
+                        </ul>
+                    </div>
+                    <div class="sub-header__tags__subj">
+                        Subject
+                    </div>
+                </div>
+                <div class="sub-header__breadcrumbs">
+                    Breadcrumbs
+                </div>
+            </section>
+        </header>
+    </div>
+
 
 	<div id="content" class="site-content">

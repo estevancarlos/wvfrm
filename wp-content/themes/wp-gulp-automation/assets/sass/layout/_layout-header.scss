@@ -1,0 +1,36 @@
+.header {
+  display: block;
+  padding: $baseline-height 0px;
+  background-color: $wv-white;
+  
+  @at-root #{&}__logo {
+
+  }
+  @at-root #{&}__sign-up {
+    text-align: right;
+  }
+  @at-root #{&}__search {
+
+  }
+  @at-root #{&}__menu {
+
+  }
+
+  @at-root #{&}__logo {
+    margin: 12px auto;
+  }
+
+  @at-root #{&}__menu {
+    margin: 12px auto;
+  }
+}
+
+.sub-header {
+  display: block;
+  /* padding: $baseline-height 0px; */
+  background-color: $wv-purple;
+
+  .sub-header__tags div[class^="sub-header__tags__"]:first-child {
+    border-right: 1px solid $wv-white;
+  }
+}

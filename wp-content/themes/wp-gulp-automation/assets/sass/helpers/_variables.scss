@@ -5,6 +5,8 @@ $bootstrap-sass-asset-helper: false !default;
 // Variables
 // --------------------------------------------------
 
+$baseline-height:                30px;
+
 
 //== Colors
 //
@@ -16,6 +18,7 @@ $wv-blue:                 #273FD6;
 $wv-blue-dark:            #001ABE;
 $wv-blue-light:           #788AFA;
 $wv-blue-lighter:         #B7C1FF;
+$wv-purple:               #4725B0;
 $wv-green:                #42F0E4;
 $wv-black:                #27262B;
 $wv-red:                  #FF5B5B;
@@ -39,7 +42,6 @@ $brand-danger:            $wv-red !default;
 
 
 // Gradients
-
 
 @mixin wv-gradient-bg() {
   opacity: 0.35;
@@ -90,6 +92,8 @@ $font-size-h3:            ceil(($font-size-base * 1.7)) !default; // ~24px
 $font-size-h4:            ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-h5:            $font-size-base !default;
 $font-size-h6:            ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$wv-font-family:             'Lato', Helvetica, Arial, sans-serif;
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14

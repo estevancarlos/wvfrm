@@ -1,4 +1,8 @@
 .btn-wv {
+  padding: 10px;
+  background: transparent;
+  @include border-radius(4px);
+
   @at-root #{&}__tag {
     color: black;
   }
@@ -6,6 +10,8 @@
     color: red;
   }
   @at-root #{&}__cta {
-    color: red;
+    color: $wv-red;
+    border: solid 2px $wv-red;
+    padding: 10px 20px;
   }
 }

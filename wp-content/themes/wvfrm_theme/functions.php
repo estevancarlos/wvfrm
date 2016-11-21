@@ -47,6 +47,67 @@ function wvfrm_setup() {
 		'primary' => esc_html__( 'Primary', 'wvfrm' ),
 	) );
 
+    // Blacklist WordPress menu class names
+    // https://wpscholar.com/blog/remove-extraneous-wordpress-nav-menu-class-names/
+    add_filter( 'nav_menu_css_class', function ( array $classes, $item, $args, $depth ) {
+        $disallowed_class_names = array(
+            "menu-item-object-{$item->object}",
+            "menu-item-type-{$item->type}",
+            "menu-item-{$item->ID}",
+            "current-{$item->object}-item",
+            "current-{$item->type}-item",
+            "current-{$item->object}-parent",
+            "current-{$item->type}-parent",
+            "current-{$item->object}-ancestor",
+            "current-{$item->type}-ancestor",
+            'page_item',
+            'page_item_has_children',
+            "page-item-{$item->object_id}",
+            'current_page_item',
+            'current_page_parent',
+            'current_page_ancestor',
+        );
+        foreach ( $classes as $class ) {
+            if ( in_array( $class, $disallowed_class_names ) ) {
+                $key = array_search( $class, $classes );
+                if ( false !== $key ) {
+                    unset( $classes[ $key ] );
+                }
+            }
+        }
+
+        return $classes;
+    }, 10, 4 );
+
+    $allowed_class_names = array(
+        'current-menu-parent',
+    );
+
+    // Replaces classes on li menu items
+    // https://codex.wordpress.org/Class_Reference/Walker
+    class Walker_Quickstart_Menu extends Walker {
+
+        // Tell Walker where to inherit it's parent and id values
+        var $db_fields = array(
+            'parent' => 'menu_item_parent',
+            'id'     => 'db_id'
+        );
+
+        /**
+         * At the start of each element, output a <li> and <a> tag structure.
+         *
+         * Note: Menu objects include url and title properties, so we will use those.
+         */
+        function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+            $output .= sprintf( "\n<li class='menu__option'><a href='%s'%s>%s</a></li>\n",
+                $item->url,
+                ( $item->object_id === get_the_ID() ) ? ' class="current"' : '',
+                $item->title
+            );
+        }
+
+    }
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -60,10 +121,12 @@ function wvfrm_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
+    /*
 	add_theme_support( 'custom-background', apply_filters( 'wvfrm_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+    */
 }
 endif;
 add_action( 'after_setup_theme', 'wvfrm_setup' );

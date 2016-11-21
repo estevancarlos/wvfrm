@@ -1,10 +1,10 @@
 body {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-family: $wv-font-family;
   font-weight: 400;
   color: $wv-blue-dark;
 
   a {
-    color: $wv-med-blue;
+    color: $wv-blue-light;
     text-decoration: none;
   }
 }
@@ -75,6 +75,34 @@ a.btn-fill {
   }
 }
 
+.menu {
+  @at-root #{&}__option {
+    line-height: normal;
+    font-size: $font-size-base;
+  }
+  @at-root #{&}__option a {
+    color: $wv-blue-dark;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+
+}
+
+.header__sign-up {
+  .btn-wv__cta {
+    font-size: $font-size-base;
+  }
+}
+
+.sub-header {
+  color: $wv-white;
+
+  a {
+    color: $wv-white;
+  }
+}
+
 
 .content-card__title {
   color: $gray;
@@ -87,7 +115,7 @@ a.btn-fill {
   }
 
   a {
-    color: $wv-link-blue;
+    color: $wv-blue-light;
   }
 }
 
@@ -141,7 +169,7 @@ a.btn-fill {
 }
 
 .related-region h5 {
-  color: $wv-light-blue;
+  color: $wv-blue-light;
   font-size: 1.5em;
   font-weight: bold;
 }

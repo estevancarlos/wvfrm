@@ -41,6 +41,11 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+    global $wp_query;
+    $post_ID = $wp_query->post->ID;
+?>
+
 <div id="fb-root"></div>
 <script>
     (function(d, s, id) {
@@ -54,27 +59,54 @@
 
 <div id="page" class="site">
 
-    <header class="header">
-        <div class="logo header__logo"><!-- header__logo el for positioning -->
-            <div class="logo__img">
+    <div class="header">
+        <header>
+            <section>
+                <div class="logo header__logo"><!-- header__logo el for positioning -->
+                    <div class="logo__img">
+                        Logo
+                    </div>
+                </div>
+                <div class="menu header__menu">
+                    <?php wp_nav_menu( array(
+                        'theme_location' => 'primary',
+                        'container' => '',
+                        'menu_class' => 'menu_size-wide',
+                        'walker' => new Walker_Quickstart_Menu(),
+                    ) ); ?>
+                </div>
+                <div class="search header__search">
 
-            </div>
-        </div>
-        <div class="menu header__menu">
-            <ul class="menu_size-wide">
-                <li class="menu__option">Tutorials</li>
-                <li class="menu__option">Lesson Plans</li>
-                <li class="menu__option">Downloads</li>
-            </ul>
-        </div>
-        <div class="search header__search">
+                </div>
+                <div class="header__sign-up">
+                    <button class="btn-wv btn-wv__cta">
+                        Sign-Up for our Newsletter
+                    </button>
+                </div>
+            </section>
+        </header>
+    </div>
 
-        </div>
-        <div class="header__sign-up">
-            <button class="btn-wv btn-wv_cta">
-                Sign-Up for our Newsletter
-            </button>
-        </div>
-    </header>
+    <div class="sub-header">
+        <header>
+            <section>
+                <div class="sub-header__tags">
+                    <div class="sub-header__tags__tech">
+                        Technology
+                        <ul>
+                            <?php get_the_terms($post_ID, 'technology'); ?>
+                        </ul>
+                    </div>
+                    <div class="sub-header__tags__subj">
+                        Subject
+                    </div>
+                </div>
+                <div class="sub-header__breadcrumbs">
+                    Breadcrumbs
+                </div>
+            </section>
+        </header>
+    </div>
+
 
 	<div id="content" class="site-content">

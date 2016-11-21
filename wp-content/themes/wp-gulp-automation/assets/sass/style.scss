@@ -6,6 +6,7 @@
 @import 'helpers/_variables.scss';
 @import 'helpers/_helpers.scss';
 @import 'layout/_grid';
+@import 'layout/_layout-header';
 @import 'layout/_layout-search';
 @import 'layout/_related-region';
 @import 'layout/_layout-page';
@@ -15,7 +16,6 @@
 @import 'components/_menu';
 @import 'components/_sub-header';
 @import 'components/_tips';
-@import 'components/_header';
 @import 'base/_typography';
 @import 'vendor/_ultimatesearch';
 
@@ -103,7 +103,7 @@ body {
 .archive-color {
   transition: all 1s;
   background-color: #fff;
-  border-bottom: 1px solid $wv-light-blue;
+  border-bottom: 1px solid $wv-blue-light;
 }
 
 .archive-color:hover {
@@ -115,7 +115,7 @@ article.tutorial > header {
 }
 
 .border {
-  background-color: $wv-light-blue;
+  background-color: $wv-blue-light;
   padding: 0;
   margin: 0 15px;
   height: 2px;
