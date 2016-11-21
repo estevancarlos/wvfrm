@@ -11,6 +11,7 @@
 @import 'layout/_related-region';
 @import 'layout/_layout-page';
 @import 'layout/_layout-tutorial';
+@import 'components/_video';
 @import 'components/_cards';
 @import 'components/_buttons';
 @import 'components/_menu';
@@ -42,15 +43,6 @@ body {
   overflow-x: hidden;
   margin: 0;
   height: 100%;
-}
-
-#page {
-  @include background-image(linear-gradient($wv-blue, #1f32ab));
-
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
 }
 
 .page-header {
@@ -110,9 +102,7 @@ body {
   background-color: $wv-red;
 }
 
-article.tutorial > header {
-  padding: 35px 0;
-}
+
 
 .border {
   background-color: $wv-blue-light;

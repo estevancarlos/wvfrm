@@ -42,18 +42,11 @@ $brand-danger:            $wv-red !default;
 
 
 // Gradients
-
 @mixin wv-gradient-bg() {
-  opacity: 0.35;
-  background: #4825B0;
-}
-
-@mixin wv-gradient-item() {
-  opacity: 0.6;
   background: rgb(39,63,214);
-  background: -moz-linear-gradient(left, rgba(39,63,214,1) 0%, rgba(16,213,204,1) 100%);
-  background: -webkit-linear-gradient(left, rgba(39,63,214,1) 0%,rgba(16,213,204,1) 100%);
-  background: linear-gradient(to right, rgba(39,63,214,1) 0%,rgba(16,213,204,1) 100%);
+  background: -moz-linear-gradient(left, rgba(39,63,214,1) 0%, rgba(103,39,214,1) 100%);
+  background: -webkit-linear-gradient(left, rgba(39,63,214,1) 0%,rgba(103,39,214,1) 100%);
+  background: linear-gradient(to right, rgba(39,63,214,1) 0%,rgba(103,39,214,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#273fd6', endColorstr='#10d5cc',GradientType=1 );
 }
 

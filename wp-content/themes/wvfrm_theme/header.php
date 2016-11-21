@@ -91,14 +91,33 @@
         <header>
             <section>
                 <div class="sub-header__tags">
-                    <div class="sub-header__tags__tech">
-                        Technology
+                    <div class="sub-header__tags__subj">
+                        <strong>Subjects</strong>
                         <ul>
-                            <?php get_the_terms($post_ID, 'technology'); ?>
+                            <?php
+                            $terms = wp_get_post_terms( $post_ID, 'subject' );
+
+                            foreach ($terms as $term) {
+                                $term_url = esc_url( get_term_link( $term->slug, 'subject' ) );
+                                $term_link = sprintf('<a href="' . $term_url . '">');
+                                echo '<li>' . $term_link . $term->name . '</a></li>';
+                            }
+                            ?>
                         </ul>
                     </div>
-                    <div class="sub-header__tags__subj">
-                        Subject
+                    <div class="sub-header__tags__tech">
+                        <strong>Technologies</strong>
+                        <ul>
+                            <?php
+                            $terms = wp_get_post_terms( $post_ID, 'technology' );
+
+                            foreach ($terms as $term) {
+                                $term_url = esc_url( get_term_link( $term->slug, 'technology' ) );
+                                $term_link = sprintf('<a href="' . $term_url . '">');
+                                echo '<li>' . $term_link . $term->name . '</a></li>';
+                            }
+                            ?>
+                        </ul>
                     </div>
                 </div>
                 <div class="sub-header__breadcrumbs">
@@ -107,6 +126,5 @@
             </section>
         </header>
     </div>
-
 
 	<div id="content" class="site-content">

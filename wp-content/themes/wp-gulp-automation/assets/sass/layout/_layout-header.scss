@@ -31,6 +31,17 @@
   background-color: $wv-purple;
 
   .sub-header__tags div[class^="sub-header__tags__"]:first-child {
-    border-right: 1px solid $wv-white;
+    border-right: 1px solid $wv-white*0.5;
+  }
+
+  .sub-header__tags div[class^="sub-header__tags__"] ul {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    display: inline-block;
   }
 }

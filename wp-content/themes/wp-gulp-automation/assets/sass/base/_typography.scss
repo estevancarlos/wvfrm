@@ -98,8 +98,16 @@ a.btn-fill {
 .sub-header {
   color: $wv-white;
 
+  strong {
+    margin-right: 15px;
+  }
+
   a {
     color: $wv-white;
+  }
+
+  li {
+    font-size: 14px;
   }
 }
 
@@ -119,6 +127,12 @@ a.btn-fill {
   }
 }
 
+
+#page {
+  p {
+    color: $gray-darker;
+  }
+}
 
 
 #secondary {
