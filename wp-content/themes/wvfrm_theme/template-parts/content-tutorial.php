@@ -47,6 +47,7 @@
                     </h1>'
                         );
                     endif;
+
                     if ( get_field('sub_headline') ) : ?>
                         <h2 class="tutorial-sub_headline">
                             <?php get_field('sub_headline'); ?>

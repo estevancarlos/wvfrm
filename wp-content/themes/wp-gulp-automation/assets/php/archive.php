@@ -8,36 +8,46 @@
  */
 get_header(); ?>
 
-archive.php
+    <div id="content" class="site-content">
+        <div class="archive-page" role="main">
+            <section>
+                <div class="archive-page__promo-wide">
+                    Promo Advert Area
+                </div>
+            </section>
 
-	<div id="archive" class="content-area">
-		<main id="main" class="site-main" role="main">
+            <section>
+                <aside class="archive-page__filter">
+                    <h3>Technology</h3>
+                    <?php echo facetwp_display( 'facet', 'technology' ); ?>
 
-                <section id="search" class="results-region-container">
-                    <div class="facetwp-template">
-                        <div class="results-region">
+                    <h3>Subject</h3>
+                    <?php echo facetwp_display( 'facet', 'subject' ); ?>
 
-                            <?php
-                            if ( have_posts() ) {
-                                while ( have_posts() ) {
-                                    the_post(); ?>
+                    <h3>Learning Level</h3>
+                    <?php echo facetwp_display( 'facet', 'learning_level' ); ?>
+                </aside>
 
-                                    <article>
-                                        <?php wvfrm_card( get_field('youtube_url') ); ?>
-                                    </article>
+                <main class="archive-page__results facetwp-template">
+                    <?php
+                    if ( have_posts() ) {
+                        while ( have_posts() ) {
+                            the_post(); ?>
 
-                                <?php } // end while
+                            <article>
+                                <?php wvfrm_card( get_field('youtube_url') ); ?>
+                            </article>
 
-                                the_posts_navigation();
-                            } // end if
-                            ?>
-                        </div>
-                    </div>
-                </section>
+                        <?php } // end while
 
+                        the_posts_navigation();
+                    } // end if
+                    ?>
+                </main>
+            </section>
+        </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+</div><!-- #primary -->
 
 <?php
 get_footer();
