@@ -13,51 +13,25 @@ archive.php
 	<div id="archive" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-
-
-
                 <section id="search" class="results-region-container">
-                    <div class="results-region">
+                    <div class="facetwp-template">
+                        <div class="results-region">
 
-                        <div class="taxonomy-list">
-                            <h4>Subject</h4>
                             <?php
-                            $terms = wp_get_post_terms(get_the_ID(), 'subject', 'orderby=count&hide_empty=0' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                foreach ( $terms as $term ) { ?>
-                                    <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                                        <?php echo $term->name; ?>
-                                    </a>
-                                <?php }
-                            }
-                            ?>
+                            if ( have_posts() ) {
+                                while ( have_posts() ) {
+                                    the_post(); ?>
 
-                            <h4>Technology</h4>
-                            <?php
-                            $terms = wp_get_post_terms(get_the_ID(), 'technology', 'orderby=count&hide_empty=0' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                foreach ( $terms as $term ) { ?>
-                                    <a href="<?php echo esc_url(get_term_link( $term )); ?>"><?php echo $term->name; ?></a>
-                                <?php }
-                            }
+                                    <article>
+                                        <?php wvfrm_card( get_field('youtube_url') ); ?>
+                                    </article>
+
+                                <?php } // end while
+
+                                the_posts_navigation();
+                            } // end if
                             ?>
                         </div>
-
-
-                        <?php
-                        if ( have_posts() ) {
-                            while ( have_posts() ) {
-                                the_post(); ?>
-
-                                <article>
-                                    <?php wvfrm_card( get_field('youtube_url') ); ?>
-                                </article>
-
-                            <?php } // end while
-
-                            the_posts_navigation();
-                        } // end if
-                        ?>
                     </div>
                 </section>
 

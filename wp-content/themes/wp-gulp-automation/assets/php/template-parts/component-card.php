@@ -9,7 +9,7 @@
 
 ?>
 
-<div class="content-card-container">
+<div class="card-container">
     <div class="content-card">
 
         <div class="content-card__bg"

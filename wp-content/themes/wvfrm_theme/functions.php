@@ -298,26 +298,22 @@ if(function_exists("register_field_group"))
                 'maxlength' => '',
             ),
             array (
-                'key' => 'field_57a777ae5cbe4',
-                'label' => 'Video Source Name',
+                'key' => 'field_5835622096c78',
+                'label' => 'video source name',
                 'name' => 'video_source_name',
                 'type' => 'text',
+                'instructions' => '',
                 'required' => 1,
-                'conditional_logic' => array (
-                    'status' => 1,
-                    'rules' => array (
-                        array (
-                            'field' => 'null',
-                            'operator' => '==',
-                        ),
-                    ),
-                    'allorany' => 'all',
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
                 ),
                 'default_value' => '',
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
-                'formatting' => 'none',
                 'maxlength' => '',
             ),
         ),
@@ -344,29 +340,33 @@ if(function_exists("register_field_group"))
 
 // Tutorial Fields
 
-if(function_exists("register_field_group"))
-{
-    register_field_group(array (
-        'id' => 'acf_tutorial-content',
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array (
+        'key' => 'group_58357023a3167',
         'title' => 'Tutorial Content',
         'fields' => array (
             array (
-                'key' => 'field_57a782ea7a359',
+                'key' => 'field_583570ebb0a41',
                 'label' => 'Sub-Headline',
                 'name' => 'sub_headline',
                 'type' => 'text',
-                'required' => 1,
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
                 'default_value' => '',
                 'placeholder' => '',
                 'prepend' => '',
                 'append' => '',
-                'formatting' => 'none',
                 'maxlength' => '',
             ),
-
-            // Tips Fields
             array (
-                'key' => 'field_583366fc9add0',
+                'key' => 'field_583571531b10e',
                 'label' => 'Tips',
                 'name' => 'tips',
                 'type' => 'repeater',
@@ -378,14 +378,14 @@ if(function_exists("register_field_group"))
                     'class' => '',
                     'id' => '',
                 ),
-                'collapsed' => '',
+                'collapsed' => 'field_5835716d1b10f',
                 'min' => '',
                 'max' => '',
                 'layout' => 'table',
-                'button_label' => 'Add Row',
+                'button_label' => 'Add Tip',
                 'sub_fields' => array (
                     array (
-                        'key' => 'field_5833671f9add1',
+                        'key' => 'field_5835716d1b10f',
                         'label' => 'Tip Content',
                         'name' => 'tip_content',
                         'type' => 'textarea',
@@ -401,10 +401,10 @@ if(function_exists("register_field_group"))
                         'placeholder' => '',
                         'maxlength' => '',
                         'rows' => 3,
-                        'new_lines' => '',
+                        'new_lines' => 'wpautop',
                     ),
                     array (
-                        'key' => 'field_58347d9e1529a',
+                        'key' => 'field_583571c21b110',
                         'label' => 'Source',
                         'name' => 'tip_source',
                         'type' => 'text',
@@ -431,21 +431,20 @@ if(function_exists("register_field_group"))
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'tutorial',
-                    'order_no' => 0,
-                    'group_no' => 0,
                 ),
             ),
         ),
-        'options' => array (
-            'position' => 'acf_after_title',
-            'layout' => 'default',
-            'hide_on_screen' => array (
-            ),
-        ),
-        'menu_order' => 1,
+        'menu_order' => 2,
+        'position' => 'acf_after_title',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => 1,
+        'description' => '',
     ));
-}
 
+endif;
 
 /**
  * Taxonomies
@@ -467,7 +466,7 @@ function technology_init() {
         'query_var'     => 'technologies',
     );
 
-    register_taxonomy('technology', 'post', $args);
+    register_taxonomy('technology', 'tutorial', $args);
 }
 
 add_action('init', 'subjects_init', 0);
@@ -487,7 +486,7 @@ function subjects_init() {
         'query_var'     => 'subjects',
     );
 
-    register_taxonomy('subject', 'post', $args);
+    register_taxonomy('subject', 'tutorial', $args);
 }
 
 add_action('init', 'level_init', 0);
@@ -507,5 +506,5 @@ function level_init() {
         'query_var'     => 'levels',
     );
 
-    register_taxonomy('level', 'post', $args);
+    register_taxonomy('level', 'tutorial', $args);
 }

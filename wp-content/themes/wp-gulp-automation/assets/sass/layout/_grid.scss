@@ -235,6 +235,16 @@ $screen-xl-min:       1600px;
 }
 
 
+.aside {
+  section {
+    @include make-row();
+  }
+  .content-card-container {
+    @include make-md-column(3);
+  }
+}
+
+
 .results-region-container {
   @include container-fixed();
   @media (min-width: $screen-sm-min) {

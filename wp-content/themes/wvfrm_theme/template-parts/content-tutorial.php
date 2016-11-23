@@ -141,7 +141,7 @@
 
             <div class="right-col">
                 <!-- Tips -->
-                <?php if(get_field('tutorial_tips')) { ?>
+                <?php if(get_field('tips')) { ?>
                     <div class="article__tips tips">
                         <h3>Tips</h3>
                         <!-- ?php echo get_field('tutorial_tips'); ? -->
@@ -158,15 +158,23 @@
                             <?php endwhile; ?>
                             </ul>
                         <?php
-                        else :
-                            // no rows found
-                        endif;
+                        else : ?>
+
+                        <?php endif;
                         ?>
                     </div>
+                <?php } else { ?>
+                    No tips
                 <?php } ?>
             </div>
         </section>
     </article>
 </div>
+
+<aside class="aside">
+    <section>
+        <?php get_template_part( 'template-parts/content', 'related' ); ?>
+    </section>
+</aside>
 
 <?php get_footer(); ?>

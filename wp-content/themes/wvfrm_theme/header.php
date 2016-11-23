@@ -76,7 +76,7 @@
                     ) ); ?>
                 </div>
                 <div class="search header__search">
-
+                    <?php get_search_form(); ?>
                 </div>
                 <div class="header__sign-up">
                     <button class="btn-wv btn-wv__cta">
