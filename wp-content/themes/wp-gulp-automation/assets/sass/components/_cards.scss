@@ -2,6 +2,12 @@
   @at-root #{&}__img {
     color: black;
   }
+
+  /* Modifiers */
+  @at-root #{&}_tip {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+  }
   @at-root #{&}_size_wide {
     max-width: 100%;
   }

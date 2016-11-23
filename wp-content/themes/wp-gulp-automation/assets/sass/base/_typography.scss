@@ -1,7 +1,7 @@
 body {
   font-family: $wv-font-family;
   font-weight: 400;
-  color: $wv-blue-dark;
+  color: $wv-black;
 
   a {
     color: $wv-blue-light;
@@ -85,8 +85,23 @@ a.btn-fill {
     font-weight: 600;
     font-size: 14px;
   }
+}
 
+.footer__menu {
+  a {
+    color: $wv-white;
+  }
+}
 
+.tips li {
+  font-size: 20px;
+  line-height: 1.45em;
+  color: $wv-black;
+}
+
+.tips li div {
+  color: #999;
+  font-size: 12px;
 }
 
 .header__sign-up {

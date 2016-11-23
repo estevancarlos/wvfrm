@@ -1,0 +1,8 @@
+.footer {
+  padding: $baseline-height 0 $baseline-height*3 0;
+  margin: $baseline-height 0 0 0;
+}
+
+.footer_bg {
+  @include wv-gradient-bg();
+}

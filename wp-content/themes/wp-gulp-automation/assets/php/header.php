@@ -91,7 +91,7 @@
         <header>
             <section>
                 <div class="sub-header__tags">
-                    <div class="sub-header__tags__subj">
+                    <div class="sub-header__tags__subj ">
                         <strong>Subjects</strong>
                         <ul>
                             <?php
@@ -100,7 +100,7 @@
                                 foreach ($terms as $term) {
                                     $term_url = esc_url(get_term_link($term->slug, 'subject'));
                                     $term_link = sprintf('<a href="' . $term_url . '">');
-                                    echo '<li>' . $term_link . $term->name . '</a></li>';
+                                    echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
                                 }
                             }
                             ?>
@@ -115,7 +115,7 @@
                                 foreach ($terms as $term) {
                                     $term_url = esc_url(get_term_link($term->slug, 'technology'));
                                     $term_link = sprintf('<a href="' . $term_url . '">');
-                                    echo '<li>' . $term_link . $term->name . '</a></li>';
+                                    echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
                                 }
                             }
                             ?>

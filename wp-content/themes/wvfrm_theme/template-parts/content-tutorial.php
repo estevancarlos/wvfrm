@@ -142,9 +142,26 @@
             <div class="right-col">
                 <!-- Tips -->
                 <?php if(get_field('tutorial_tips')) { ?>
-                    <div class="article__tips">
-                        <h3>Our Advice</h3>
-                        <?php echo get_field('tutorial_tips'); ?>
+                    <div class="article__tips tips">
+                        <h3>Tips</h3>
+                        <!-- ?php echo get_field('tutorial_tips'); ? -->
+
+                        <?php
+                        if( have_rows('tips') ): ?>
+                            <ul class="card">
+                            <?php
+                            while ( have_rows('tips') ) : the_row(); ?>
+                                <li class="card_tip">
+                                    <?php the_sub_field('tip_content'); ?>
+                                    <div><?php the_sub_field('tip_source'); ?></div>
+                                </li>
+                            <?php endwhile; ?>
+                            </ul>
+                        <?php
+                        else :
+                            // no rows found
+                        endif;
+                        ?>
                     </div>
                 <?php } ?>
             </div>
@@ -152,6 +169,4 @@
     </article>
 </div>
 
-<footer>
-
-</footer>
+<?php get_footer(); ?>

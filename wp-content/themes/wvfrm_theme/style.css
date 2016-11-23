@@ -7511,27 +7511,57 @@ button.close {
 
 .video__details header {
   position: relative;
+  float: left;
   margin-left: 8.33333%;
   padding-right: 15px;
   padding-left: 15px;
+  width: 66.66667%;
   min-height: 1px;
-}
-@media (min-width: 992px) {
-  .video__details header {
-    float: left;
-    width: 66.66667%;
-  }
 }
 .video__details aside {
   position: relative;
+  float: left;
   padding-right: 15px;
   padding-left: 15px;
+  width: 16.66667%;
   min-height: 1px;
 }
-@media (min-width: 992px) {
-  .video__details aside {
+@media (max-width: 992px) {
+  .video__details header {
+    position: relative;
     float: left;
-    width: 16.66667%;
+    margin-left: 0%;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 75%;
+    min-height: 1px;
+  }
+  .video__details aside {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 25%;
+    min-height: 1px;
+  }
+}
+@media (max-width: 768px) {
+  .video__details header {
+    position: relative;
+    float: left;
+    margin-left: 0%;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-height: 1px;
+  }
+  .video__details aside {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-height: 1px;
   }
 }
 
@@ -7542,6 +7572,72 @@ button.close {
   padding-right: 15px;
   padding-left: 15px;
   overflow: hidden;
+}
+.article article section {
+  *zoom: 1;
+  margin-right: -15px;
+  margin-left: -15px;
+  overflow: hidden;
+}
+.article article .left-col {
+  position: relative;
+  float: left;
+  margin-left: 8.33333%;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 50%;
+  min-height: 1px;
+}
+.article article .right-col {
+  position: relative;
+  float: left;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 33.33333%;
+  min-height: 1px;
+}
+@media (max-width: 992px) {
+  .article article .left-col {
+    position: relative;
+    float: left;
+    margin-left: 0%;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 66.66667%;
+    min-height: 1px;
+  }
+  .article article .right-col {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 33.33333%;
+    min-height: 1px;
+  }
+}
+@media (max-width: 768px) {
+  .article article .left-col {
+    position: relative;
+    float: left;
+    margin-left: 0%;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-height: 1px;
+  }
+  .article article .right-col {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-height: 1px;
+  }
+}
+@media (min-width: 480px) {
+  .article article {
+    width: 100%;
+  }
 }
 @media (min-width: 768px) {
   .article article {
@@ -7558,28 +7654,62 @@ button.close {
     width: 1170px;
   }
 }
-.article article section {
+
+.footer footer {
+  *zoom: 1;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .footer footer {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .footer footer {
+    width: 970px;
+  }
+}
+@media (min-width: 1360px) {
+  .footer footer {
+    width: 1170px;
+  }
+}
+.footer footer section {
   *zoom: 1;
   margin-right: -15px;
   margin-left: -15px;
   overflow: hidden;
 }
-.article article .left-col {
+.footer footer .footer__menu {
   position: relative;
   float: left;
-  margin-left: 8.33333%;
   padding-right: 15px;
   padding-left: 15px;
-  width: 58.33333%;
+  width: 75%;
   min-height: 1px;
 }
-.article article .right-col {
+.footer footer .footer__greeting {
   position: relative;
   float: left;
   padding-right: 15px;
   padding-left: 15px;
   width: 25%;
   min-height: 1px;
+}
+@media (max-width: 768px) {
+  .footer footer .footer__menu,
+  .footer footer .footer__greeting {
+    position: relative;
+    float: left;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+    min-height: 1px;
+  }
 }
 
 .results-region-container {
@@ -7956,6 +8086,19 @@ section > div[class^="entry-content-"] {
   display: inline-block;
 }
 
+.footer {
+  margin: 30px 0 0 0;
+  padding: 30px 0 90px 0;
+}
+
+.footer_bg {
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#273fd6', endColorstr='#10d5cc',GradientType=1 );
+  background: #273fd6;
+  background: -moz-linear-gradient(left, #273fd6 0%, #6727d6 100%);
+  background: -webkit-linear-gradient(left, #273fd6 0%, #6727d6 100%);
+  background: linear-gradient(to right, #273fd6 0%, #6727d6 100%);
+}
+
 .results-region-container {
   padding-top: 90px;
 }
@@ -8046,8 +8189,14 @@ section > div[class^="entry-content-"] {
   padding-top: 60px;
 }
 
+.card {
+}
 .card__img {
   color: black;
+}
+.card_tip {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
 }
 .card_size_wide {
   max-width: 100%;
@@ -8221,6 +8370,17 @@ section > div[class^="entry-content-"] {
   color: #FF5B5B;
 }
 
+li.btn-wv_tag {
+  padding: 0;
+}
+
+.btn-wv_tag a {
+  margin: 0 7.5px;
+  border: 1px solid #F2F2F7;
+  border-radius: 3px;
+  padding: 5px 8px;
+}
+
 .menu ul {
   margin: 0;
   padding: 0;
@@ -8228,19 +8388,41 @@ section > div[class^="entry-content-"] {
 .menu__img {
   color: black;
 }
-.menu__option {
-  display: inline-block;
-  margin: 0 15px;
-}
-.menu_size_wide__option {
-  display: inline-block;
-}
-.menu_size_tall__option {
+.menu .menu_size-wide .menu__option {
   display: inline-block;
 }
 
+.header__menu .menu__option {
+  margin: 0 15px;
+}
+
+.footer__menu .menu__option {
+  display: block;
+  margin: 15px 0;
+}
+
+.footer__menu ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.tips ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tips li {
+  -moz-box-shadow: 0 3px 0 0 #E7E7E7;
+  -webkit-box-shadow: 0 3px 0 0 #E7E7E7;
+  margin: 15px 0;
+  box-shadow: 0 3px 0 0 #E7E7E7;
+  background: #FFFFFF;
+  padding: 30px;
+}
+
 body {
-  color: #001ABE;
+  color: #27262B;
   font-family: "Lato", Helvetica, Arial, sans-serif;
   font-weight: 400;
 }
@@ -8315,6 +8497,21 @@ a.btn-fill {
   color: #001ABE;
   font-size: 14px;
   font-weight: 600;
+}
+
+.footer__menu a {
+  color: #F2F2F7;
+}
+
+.tips li {
+  color: #27262B;
+  font-size: 20px;
+  line-height: 1.45em;
+}
+
+.tips li div {
+  color: #999;
+  font-size: 12px;
 }
 
 .header__sign-up .btn-wv__cta {

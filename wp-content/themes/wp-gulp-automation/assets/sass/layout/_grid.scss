@@ -108,16 +108,99 @@ $screen-xl-min:       1600px;
 
 .video__details {
   header {
-    @include make-md-column(8);
+    @include make-xs-column(8);
     @include make-col-offset(1);
   }
 
   aside {
-    @include make-md-column(2);
+    @include make-xs-column(2);
+  }
+
+  /////////////////////
+
+  @media (max-width: $screen-md-min) {
+    header {
+      @include make-xs-column(9);
+      @include make-col-offset(0);
+    }
+
+    aside {
+      @include make-xs-column(3);
+    }
+  }
+
+  @media (max-width: $screen-sm-min) {
+    header {
+      @include make-xs-column(12);
+      @include make-col-offset(0);
+    }
+
+    aside {
+      @include make-xs-column(12);
+    }
   }
 }
 
 .article article {
+  @include container-fixed();
+
+  section {
+    @include make-row();
+  }
+
+  .left-col {
+    @include make-xs-column(6);
+    @include make-col-offset(1);
+  }
+
+  .right-col {
+    @include make-xs-column(4);
+  }
+
+  /////////////////////
+
+  @media (max-width: $screen-md-min) {
+    .left-col {
+      @include make-xs-column(8);
+      @include make-col-offset(0);
+    }
+
+    .right-col {
+      @include make-xs-column(4);
+    }
+  }
+
+  @media (max-width: $screen-sm-min) {
+    .left-col {
+      @include make-xs-column(12);
+      @include make-col-offset(0);
+    }
+
+    .right-col {
+      @include make-xs-column(12);
+    }
+  }
+
+  /////////////////////
+
+  @media (min-width: $screen-xs-min) {
+    width: 100%;
+  }
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+
+}
+
+
+
+.footer footer {
   @include container-fixed();
   @media (min-width: $screen-sm-min) {
     width: $container-sm;
@@ -133,16 +216,23 @@ $screen-xl-min:       1600px;
     @include make-row();
   }
 
-  .left-col {
-    @include make-md-column(7);
-    @include make-col-offset(1);
+  .footer__menu {
+    @include make-xs-column(9);
   }
 
-  .right-col {
-    @include make-md-column(3);
+  .footer__greeting {
+    @include make-xs-column(3);
+  }
+
+  /////////////////////
+
+  @media (max-width: $screen-sm-min) {
+    .footer__menu,
+    .footer__greeting {
+      @include make-xs-column(12);
+    }
   }
 }
-
 
 
 .results-region-container {
