@@ -3652,9 +3652,9 @@ select[multiple].input-lg,
 
 .btn {
   user-select: none;
-  -ms-user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
+  -ms-user-select: none;
   display: inline-block;
   vertical-align: middle;
   cursor: pointer;
@@ -8152,11 +8152,11 @@ section > div[class^="entry-content-"] {
   background-color: #F2F2F7;
   padding: 30px 0px;
 }
+.header__logo img {
+  width: 30%;
+}
 .header__sign-up {
   text-align: right;
-}
-.header__logo {
-  margin: 12px auto;
 }
 .header__menu {
   margin: 12px auto;
@@ -8325,13 +8325,13 @@ section > div[class^="entry-content-"] {
 }
 
 .content-card:hover {
+  -webkit-transition-duration: 0.2s;
   -moz-transition-property: all;
-  -o-transition-duration: 0.2s;
   -webkit-transition-property: all;
   -o-transition-timing-function: ease-in;
   -moz-transition-duration: 0.2s;
   -o-transition-property: all;
-  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
   -moz-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
   transition-duration: 0.2s;
@@ -8341,14 +8341,14 @@ section > div[class^="entry-content-"] {
 }
 
 .content-card:hover .content-card__bg::after {
+  -o-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
-  -webkit-transition-timing-function: ease-in;
   -moz-transition-property: opacity;
   -o-transition-property: opacity;
   -webkit-transition-property: opacity;
   -o-transition-timing-function: ease-in;
   -webkit-filter: grayscale(0%);
-  -o-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
   -webkit-transition-duration: 0.2s;
   -moz-transition-timing-function: ease-in;
   opacity: 0.2;
@@ -8376,16 +8376,16 @@ section > div[class^="entry-content-"] {
 }
 
 .content-card__bg::after {
-  -moz-transition-property: opacity;
   -moz-transition-timing-function: ease-in;
+  -webkit-filter: grayscale(100%);
+  -o-transition-property: opacity;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
   -moz-transition-duration: 0.2s;
   -webkit-transition-property: opacity;
-  -o-transition-property: opacity;
+  -moz-transition-property: opacity;
   -o-transition-timing-function: ease-in;
   -webkit-transition-timing-function: ease-in;
-  -webkit-filter: grayscale(100%);
   position: absolute;
   top: -10%;
   right: 0;

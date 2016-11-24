@@ -508,3 +508,18 @@ function level_init() {
 
     register_taxonomy('level', 'tutorial', $args);
 }
+
+
+/*
+ * Redirect
+ */
+
+function my_page_template_redirect()
+{
+    if( is_home() )
+    {
+        wp_redirect( home_url( '/tutorial/' ) );
+        exit();
+    }
+}
+add_action( 'template_redirect', 'my_page_template_redirect' );

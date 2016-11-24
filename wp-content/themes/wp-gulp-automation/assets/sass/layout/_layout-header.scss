@@ -3,8 +3,8 @@
   padding: $baseline-height 0px;
   background-color: $wv-white;
   
-  @at-root #{&}__logo {
-
+  @at-root #{&}__logo img {
+    width: 30%;
   }
   @at-root #{&}__sign-up {
     text-align: right;
@@ -17,7 +17,7 @@
   }
 
   @at-root #{&}__logo {
-    margin: 12px auto;
+
   }
 
   @at-root #{&}__menu {

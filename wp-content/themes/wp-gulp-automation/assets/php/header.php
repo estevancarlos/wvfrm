@@ -64,7 +64,7 @@
             <section>
                 <div class="logo header__logo"><!-- header__logo el for positioning -->
                     <div class="logo__img">
-                        Logo
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wvfrm-logo.png">
                     </div>
                 </div>
                 <div class="menu header__menu">
@@ -76,7 +76,7 @@
                     ) ); ?>
                 </div>
                 <div class="search header__search">
-                    <?php get_search_form(); ?>
+                    <!-- ?php get_search_form(); ? -->
                 </div>
                 <div class="header__sign-up">
                     <button class="btn-wv btn-wv__cta">
