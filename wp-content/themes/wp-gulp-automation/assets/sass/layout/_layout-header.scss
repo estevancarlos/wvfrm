@@ -23,6 +23,11 @@
   @at-root #{&}__menu {
     margin: 12px auto;
   }
+
+
+  @media (max-width: $screen-sm-min) {
+    display: none;
+  }
 }
 
 .sub-header {
@@ -44,4 +49,9 @@
   li {
     display: inline-block;
   }
+
+  @media (max-width: $screen-sm-min) {
+    display: none;
+  }
 }
+

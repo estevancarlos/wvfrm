@@ -1,12 +1,11 @@
 #page {
   background-color: $wv-white;
-
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
 }
 
-.site-content {
+.page-basic__article {
+  padding: $baseline-height*2 0;
+}
 
+.page-basic__header {
+  padding: $baseline-height*2 0;
 }

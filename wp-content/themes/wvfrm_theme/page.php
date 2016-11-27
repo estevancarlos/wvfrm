@@ -13,8 +13,7 @@
  */
 
 get_header(); ?>
-page.php
-	<div id="primary" class="content-area">
+	<div id="primary" class="page-basic">
 		<main id="main" class="site-main" role="main">
 
 			<?php
@@ -34,5 +33,4 @@ page.php
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

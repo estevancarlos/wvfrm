@@ -22,11 +22,17 @@
     <meta property="og:title"         content="WVFRM: Your Music Resource" />
     <meta property="og:description"   content="Curated music tutorials" />
     <meta property="og:image"         content="http://www.wvfrm.com/wvfrm_fb.jpg" />
+
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <?php wp_head(); ?>
 
     <!--
     https://www.elegantthemes.com/blog/tips-tricks/how-to-add-open-graph-tags-to-wordpress
     -->
+
+
 
     <script>
         document.getElementById('shareBtn').onclick = function() {
@@ -64,7 +70,9 @@
             <section>
                 <div class="logo header__logo"><!-- header__logo el for positioning -->
                     <div class="logo__img">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wvfrm-logo.png">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/wvfrm-logo.png">
+                        </a>
                     </div>
                 </div>
                 <div class="menu header__menu">
@@ -90,41 +98,63 @@
     <div class="sub-header">
         <header>
             <section>
-                <div class="sub-header__tags">
-                    <div class="sub-header__tags__subj ">
-                        <strong>Subjects</strong>
-                        <ul>
-                            <?php
-                            $terms = wp_get_post_terms( $post_ID, 'subject' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                                foreach ($terms as $term) {
-                                    $term_url = esc_url(get_term_link($term->slug, 'subject'));
-                                    $term_link = sprintf('<a href="' . $term_url . '">');
-                                    echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
-                                }
-                            }
-                            ?>
-                        </ul>
+
+                <!--
+                    Tutorial Archive
+                -->
+                <?php if ( is_post_type_archive() ) { ?>
+
+                    <div class="sub-header__description">
+                        Find a tutorial by technology, subject, and learning level.
                     </div>
-                    <div class="sub-header__tags__tech">
-                        <strong>Technologies</strong>
-                        <ul>
-                            <?php
-                            $terms = wp_get_post_terms( $post_ID, 'technology' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-                                foreach ($terms as $term) {
-                                    $term_url = esc_url(get_term_link($term->slug, 'technology'));
-                                    $term_link = sprintf('<a href="' . $term_url . '">');
-                                    echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
+
+                <!--
+                    Tutorial Singular
+                -->
+                <?php } elseif ( is_singular() && get_post_type( get_the_ID() ) == 'tutorial' ) { ?>
+
+                    <div class="sub-header__tags">
+                        <div class="sub-header__tags__subj ">
+                            <strong>Subjects</strong>
+                            <ul>
+                                <?php
+                                $terms = wp_get_post_terms( $post_ID, 'subject' );
+                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                    foreach ($terms as $term) {
+                                        $term_url = esc_url(get_term_link($term->slug, 'subject'));
+                                        $term_link = sprintf('<a href="' . get_post_type_archive_link( 'tutorial' ) . '?fwp_subject=' . $term->slug . '">');
+                                        echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
+                                    }
                                 }
-                            }
-                            ?>
-                        </ul>
+                                ?>
+                            </ul>
+                        </div>
+                        <div class="sub-header__tags__tech">
+                            <strong>Technologies</strong>
+                            <ul>
+                                <?php
+                                $terms = wp_get_post_terms( $post_ID, 'technology' );
+                                if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+                                    foreach ($terms as $term) {
+                                        $term_url = esc_url(get_term_link($term->slug, 'technology'));
+                                        $term_link = sprintf('<a href="' . get_post_type_archive_link( 'tutorial' ) . '?fwp_technology=' . $term->slug . '">');
+                                        echo '<li class="btn-wv btn-wv_tag">' . $term_link . $term->name . '</a></li>';
+                                    }
+                                }
+                                ?>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="sub-header__breadcrumbs">
-                    Breadcrumbs
-                </div>
+
+                <!--
+                    Page - Basic
+                -->
+                <?php } else { ?>
+                    <div class="sub-header__description page-basic__header">
+                        <?php the_title( '<h1 class="page-basic__header_title">', '</h1>' ); ?>
+                    </div>
+                <?php }  ?>
+
             </section>
         </header>
     </div>

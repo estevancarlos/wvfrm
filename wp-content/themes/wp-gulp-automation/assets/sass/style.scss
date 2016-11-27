@@ -10,8 +10,10 @@
 @import 'layout/_layout-footer';
 @import 'layout/_layout-search';
 @import 'layout/_layout-aside';
+@import 'layout/_layout-archive';
 @import 'layout/_layout-page';
 @import 'layout/_layout-tutorial';
+@import 'components/_facet-nav';
 @import 'components/_video';
 @import 'components/_cards';
 @import 'components/_buttons';
@@ -82,17 +84,6 @@ body {
   padding: 175px 0 70px 0;
 }
 
-
-/*
-.archive-color:nth-child(2n-1) {
-  background-color: $wv-med-blue;
-}
-
-.archive-color:nth-child(2n) {
-  background-color: $wv-blue-lighter;
-}
-*/
-
 .archive-color {
   transition: all 1s;
   background-color: #fff;
@@ -102,8 +93,6 @@ body {
 .archive-color:hover {
   background-color: $wv-red;
 }
-
-
 
 .border {
   background-color: $wv-blue-light;

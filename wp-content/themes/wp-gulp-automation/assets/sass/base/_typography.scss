@@ -44,7 +44,26 @@ aside ul li p {
   }
 }
 
+.archive-page__filter {
+  h3 {
+    font-size: 1.2em;
+  }
+}
 
+.archive-page__promo-wide {
+  text-align: center;
+
+  h2 {
+    font-weight: 100;
+    font-size: 1.8em;
+    color: $wv-gray-dark;
+  }
+
+  a {
+    color: $wv-blue-dark;
+    text-decoration: underline;
+  }
+}
 
 a.btn-fill {
   position: absolute;
@@ -129,6 +148,10 @@ a.btn-fill {
 
   li {
     font-size: 14px;
+  }
+
+  .sub-header__description {
+    font-size: 1.1em;
   }
 }
 

@@ -173,13 +173,16 @@ add_action( 'widgets_init', 'wvfrm_widgets_init' );
  * Enqueue scripts and styles.
  */
 function wvfrm_scripts() {
-	wp_enqueue_style( 'wvfrm-style', get_stylesheet_uri() );
-	wp_enqueue_script( 'wvfrm-scripts', get_template_directory_uri() . '/js/script.js', array(), '20151215', true );
+	wp_enqueue_style('wvfrm-style', get_stylesheet_uri() );
+    wp_enqueue_script('jquery-ui-core');
+    wp_enqueue_script('jquery-ui-accordion');
+    wp_enqueue_script('wvfrm-scripts', get_template_directory_uri() . '/js/script.js', array('jquery', 'jquery-ui-core', 'jquery-ui-accordion'), '2016-11-25', true );
+
 	//wp_enqueue_script( 'wvfrm-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
     /* Custom Scripts
     https://premium.wpmudev.org/blog/adding-jquery-scripts-wordpress/ */
-    //wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/jquery_script.js', array( 'jquery' ), '1.0.0', true );
+    //wp_enqueue_script( 'jquery-script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ), '1.0.0', true );
 
     /* Font Scripts */
     wp_register_script('icon-scripts', 'https://use.fontawesome.com/3c07d4dc47.js');
@@ -246,7 +249,7 @@ function cptui_register_my_cpts() {
         "capability_type" => "post",
         "map_meta_cap" => true,
         "hierarchical" => false,
-        "rewrite" => array( "slug" => "tutorial", "with_front" => true ),
+        "rewrite" => array( "slug" => "tutorials", "with_front" => true ),
         "query_var" => true,
         "menu_position" => 6,
         "supports" => array( "title", "editor", "thumbnail", "excerpt", "custom-fields", "revisions", "author" ),
@@ -299,7 +302,7 @@ if(function_exists("register_field_group"))
             ),
             array (
                 'key' => 'field_5835622096c78',
-                'label' => 'video source name',
+                'label' => 'Video Source Name',
                 'name' => 'video_source_name',
                 'type' => 'text',
                 'instructions' => '',

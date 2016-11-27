@@ -9,23 +9,26 @@
 get_header(); ?>
 
     <div id="content" class="site-content">
+        <div class="archive-page__promo-wide">
+            <h2>Promote your product or tutorials right here. <a href="#">Contact us</a>.</h2>
+        </div>
+
         <div class="archive-page" role="main">
             <section>
-                <div class="archive-page__promo-wide">
-                    Promo Advert Area
-                </div>
-            </section>
-
-            <section>
                 <aside class="archive-page__filter">
-                    <h3>Technology</h3>
-                    <?php echo facetwp_display( 'facet', 'technology' ); ?>
+                    <button onclick="FWP.reset()">View All Tutorials</button>
 
-                    <h3>Subject</h3>
-                    <?php echo facetwp_display( 'facet', 'subject' ); ?>
+                    <div id="accordion">
+                        <h3>Technology</h3>
+                        <div><?php echo facetwp_display( 'facet', 'technology' ); ?></div>
 
-                    <h3>Learning Level</h3>
-                    <?php echo facetwp_display( 'facet', 'learning_level' ); ?>
+                        <h3>Subject</h3>
+                        <div><?php echo facetwp_display( 'facet', 'subject' ); ?></div>
+
+                        <h3>Learning Level</h3>
+                        <div><?php echo facetwp_display( 'facet', 'learning_level' ); ?></div>
+                    </div>
+
                 </aside>
 
                 <main class="archive-page__results facetwp-template">

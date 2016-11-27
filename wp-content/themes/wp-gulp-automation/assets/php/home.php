@@ -7,7 +7,6 @@
  * @package wvfrm
  */
 get_header(); ?>
-Home -> Archive
     <div id="content" class="site-content">
         <div class="archive-page" role="main">
             <section>

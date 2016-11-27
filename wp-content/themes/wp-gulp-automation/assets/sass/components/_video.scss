@@ -29,4 +29,12 @@
     padding-top: $baseline-height * 2;
   }
 
+  @media (max-width: $screen-sm-min) {
+    .video__embed {
+      bottom: 0;
+    }
+    .video__details {
+      padding-top: 0;
+    }
+  }
 }
