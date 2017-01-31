@@ -273,6 +273,22 @@ if(function_exists("register_field_group"))
         'title' => 'Video',
         'fields' => array (
             array (
+                'key' => 'field_583b2124a2d99',
+                'label' => 'Youtube Details',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array (
                 'key' => 'field_57a7771b5cbe2',
                 'label' => 'Youtube URL',
                 'name' => 'youtube_url',
@@ -301,13 +317,63 @@ if(function_exists("register_field_group"))
                 'maxlength' => '',
             ),
             array (
-                'key' => 'field_5835622096c78',
-                'label' => 'Video Source Name',
-                'name' => 'video_source_name',
+                'key' => 'field_583b1f619d3b5',
+                'label' => 'Education Source',
+                'name' => '',
+                'type' => 'tab',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'placement' => 'top',
+                'endpoint' => 0,
+            ),
+            array (
+                'key' => 'field_583b1fdb9d3b7',
+                'label' => 'Video Source Type',
+                'name' => 'video_source_type',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array (
+                    'Non-Registered Educator' => 'Non-Registered Educator',
+                    'Registered Educator' => 'Registered Educator',
+                ),
+                'default_value' => array (
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ),
+            array (
+                'key' => 'field_583b1f849d3b6',
+                'label' => 'Non-Registered Educator',
+                'name' => 'non_registered_edu',
                 'type' => 'text',
                 'instructions' => '',
-                'required' => 1,
-                'conditional_logic' => 0,
+                'required' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_583b1fdb9d3b7',
+                            'operator' => '==',
+                            'value' => 'Non-Registered Educator',
+                        ),
+                    ),
+                ),
                 'wrapper' => array (
                     'width' => '',
                     'class' => '',
@@ -318,6 +384,37 @@ if(function_exists("register_field_group"))
                 'prepend' => '',
                 'append' => '',
                 'maxlength' => '',
+            ),
+            array (
+                'key' => 'field_583b1f2e9d3b4',
+                'label' => 'Registered Educator',
+                'name' => 'registered_edu',
+                'type' => 'post_object',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => array (
+                    array (
+                        array (
+                            'field' => 'field_583b1fdb9d3b7',
+                            'operator' => '==',
+                            'value' => 'Registered Educator',
+                        ),
+                    ),
+                ),
+                'wrapper' => array (
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'post_type' => array (
+                    0 => 'educator',
+                ),
+                'taxonomy' => array (
+                ),
+                'allow_null' => 0,
+                'multiple' => 0,
+                'return_format' => 'object',
+                'ui' => 1,
             ),
         ),
         'location' => array (
