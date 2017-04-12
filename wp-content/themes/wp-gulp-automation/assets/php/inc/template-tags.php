@@ -171,7 +171,7 @@ function wvfrm_card($youtube_img_url) {
             <div class="content-card">
                 <div class="content-card__bg" 
                 style="background: url(' . $bg_url . ') no-repeat top/120%; 
-                background-position-y: 0px; 
+                background-position-y: -25px; 
                 background-size: 0;">
                     <a href="' . get_permalink() . '"></a>
                     <div class="content-card__main">

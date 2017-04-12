@@ -1,10 +1,10 @@
 body {
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  font-family: $wv-font-family;
   font-weight: 400;
-  color: $wv-blue-dark;
+  color: $wv-black;
 
   a {
-    color: $wv-med-blue;
+    color: $wv-blue-light;
     text-decoration: none;
   }
 }
@@ -38,6 +38,31 @@ aside ul li p {
 
 .content-card__title {
   font-size: 1.4em;
+
+  @media (max-width: $screen-lg-min) {
+    font-size: 1.2em;
+  }
+}
+
+.archive-page__filter {
+  h3 {
+    font-size: 1.2em;
+  }
+}
+
+.archive-page__promo-wide {
+  text-align: center;
+
+  h2 {
+    font-weight: 100;
+    font-size: 1.8em;
+    color: $wv-gray-dark;
+  }
+
+  a {
+    color: $wv-blue-dark;
+    text-decoration: underline;
+  }
 }
 
 a.btn-fill {
@@ -75,6 +100,61 @@ a.btn-fill {
   }
 }
 
+.menu {
+  @at-root #{&}__option {
+    line-height: normal;
+    font-size: $font-size-base;
+  }
+  @at-root #{&}__option a {
+    color: $wv-blue-dark;
+    font-weight: 600;
+    font-size: 14px;
+  }
+}
+
+.footer__menu {
+  a {
+    color: $wv-white;
+  }
+}
+
+.tips li {
+  font-size: 20px;
+  line-height: 1.45em;
+  color: $wv-black;
+}
+
+.tips li div {
+  color: #999;
+  font-size: 12px;
+}
+
+.header__sign-up {
+  .btn-wv__cta {
+    font-size: $font-size-base;
+  }
+}
+
+.sub-header {
+  color: $wv-white;
+
+  strong {
+    margin-right: 15px;
+  }
+
+  a {
+    color: $wv-white;
+  }
+
+  li {
+    font-size: 14px;
+  }
+
+  .sub-header__description {
+    font-size: 1.1em;
+  }
+}
+
 
 .content-card__title {
   color: $gray;
@@ -87,10 +167,16 @@ a.btn-fill {
   }
 
   a {
-    color: $wv-link-blue;
+    color: $wv-blue-light;
   }
 }
 
+
+#page {
+  p {
+    color: $gray-darker;
+  }
+}
 
 
 #secondary {
@@ -141,7 +227,7 @@ a.btn-fill {
 }
 
 .related-region h5 {
-  color: $wv-light-blue;
+  color: $wv-blue-light;
   font-size: 1.5em;
   font-weight: bold;
 }

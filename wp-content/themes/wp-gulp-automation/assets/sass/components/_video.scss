@@ -1,0 +1,40 @@
+.video {
+  z-index: 100;
+  overflow: visible;
+
+  .video_bg {
+    @include wv-gradient-bg();
+    z-index: 100;
+    overflow: visible;
+  }
+
+  .video_bg section {
+    overflow: visible;
+  }
+
+  article {
+    position: relative;
+    z-index: 100;
+    overflow: visible !important;
+  }
+
+  @at-root #{&}__embed {
+    position: relative;
+    bottom: $baseline-height * -1;
+    z-index: 100;
+    overflow: visible;
+  }
+
+  @at-root #{&}__details {
+    padding-top: $baseline-height * 2;
+  }
+
+  @media (max-width: $screen-sm-min) {
+    .video__embed {
+      bottom: 0;
+    }
+    .video__details {
+      padding-top: 0;
+    }
+  }
+}

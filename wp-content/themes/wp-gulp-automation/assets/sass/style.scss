@@ -6,16 +6,20 @@
 @import 'helpers/_variables.scss';
 @import 'helpers/_helpers.scss';
 @import 'layout/_grid';
+@import 'layout/_layout-header';
+@import 'layout/_layout-footer';
 @import 'layout/_layout-search';
-@import 'layout/_related-region';
+@import 'layout/_layout-aside';
+@import 'layout/_layout-archive';
 @import 'layout/_layout-page';
 @import 'layout/_layout-tutorial';
+@import 'components/_facet-nav';
+@import 'components/_video';
 @import 'components/_cards';
 @import 'components/_buttons';
 @import 'components/_menu';
 @import 'components/_sub-header';
 @import 'components/_tips';
-@import 'components/_header';
 @import 'base/_typography';
 @import 'vendor/_ultimatesearch';
 
@@ -42,15 +46,6 @@ body {
   overflow-x: hidden;
   margin: 0;
   height: 100%;
-}
-
-#page {
-  @include background-image(linear-gradient($wv-blue, #1f32ab));
-
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
-  -webkit-animation: fadein 2s; /* Safari and Chrome */
-  -o-animation: fadein 2s; /* Opera */
 }
 
 .page-header {
@@ -89,33 +84,18 @@ body {
   padding: 175px 0 70px 0;
 }
 
-
-/*
-.archive-color:nth-child(2n-1) {
-  background-color: $wv-med-blue;
-}
-
-.archive-color:nth-child(2n) {
-  background-color: $wv-blue-lighter;
-}
-*/
-
 .archive-color {
   transition: all 1s;
   background-color: #fff;
-  border-bottom: 1px solid $wv-light-blue;
+  border-bottom: 1px solid $wv-blue-light;
 }
 
 .archive-color:hover {
   background-color: $wv-red;
 }
 
-article.tutorial > header {
-  padding: 35px 0;
-}
-
 .border {
-  background-color: $wv-light-blue;
+  background-color: $wv-blue-light;
   padding: 0;
   margin: 0 15px;
   height: 2px;

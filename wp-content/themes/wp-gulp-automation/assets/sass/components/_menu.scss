@@ -1,18 +1,33 @@
 .menu {
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
   @at-root #{&}__img {
     color: black;
   }
-  @at-root #{&}__option {
 
+  .menu_size-wide .menu__option {
+    display: inline-block;
   }
-  @at-root #{&}_size_wide {
-    @at-root #{&}__option {
-      display: inline-block;
-    }
-  }
-  @at-root #{&}_size_tall {
-    @at-root #{&}__option {
-      display: inline-block;
-    }
-  }
+}
+
+.header__menu .menu__option {
+  margin: 0 15px;
+}
+
+.footer__menu .menu__option {
+  display: block;
+  margin: 15px 0;
+}
+
+.footer__menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mob_menu_header_div {
+  background: $wv-blue;
 }

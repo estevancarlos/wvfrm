@@ -8,62 +8,49 @@
  */
 get_header(); ?>
 
-archive.php
+    <div id="content" class="site-content">
+        <div class="archive-page__promo-wide">
+            <h2>Promote your product or tutorials right here. <a href="#">Contact us</a>.</h2>
+        </div>
 
-	<div id="archive" class="content-area">
-		<main id="main" class="site-main" role="main">
+        <div class="archive-page" role="main">
+            <section>
+                <aside class="archive-page__filter">
+                    <button onclick="FWP.reset()">View All Tutorials</button>
 
+                    <div id="accordion">
+                        <h3>Technology</h3>
+                        <div><?php echo facetwp_display( 'facet', 'technology' ); ?></div>
 
+                        <h3>Subject</h3>
+                        <div><?php echo facetwp_display( 'facet', 'subject' ); ?></div>
 
-
-                <section id="search" class="results-region-container">
-                    <div class="results-region">
-
-                        <div class="taxonomy-list">
-                            <h4>Subject</h4>
-                            <?php
-                            $terms = wp_get_post_terms(get_the_ID(), 'subject', 'orderby=count&hide_empty=0' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                foreach ( $terms as $term ) { ?>
-                                    <a href="<?php echo esc_url(get_term_link( $term )); ?>">
-                                        <?php echo $term->name; ?>
-                                    </a>
-                                <?php }
-                            }
-                            ?>
-
-                            <h4>Technology</h4>
-                            <?php
-                            $terms = wp_get_post_terms(get_the_ID(), 'technology', 'orderby=count&hide_empty=0' );
-                            if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-                                foreach ( $terms as $term ) { ?>
-                                    <a href="<?php echo esc_url(get_term_link( $term )); ?>"><?php echo $term->name; ?></a>
-                                <?php }
-                            }
-                            ?>
-                        </div>
-
-
-                        <?php
-                        if ( have_posts() ) {
-                            while ( have_posts() ) {
-                                the_post(); ?>
-
-                                <article>
-                                    <?php wvfrm_card( get_field('youtube_url') ); ?>
-                                </article>
-
-                            <?php } // end while
-
-                            the_posts_navigation();
-                        } // end if
-                        ?>
+                        <h3>Learning Level</h3>
+                        <div><?php echo facetwp_display( 'facet', 'learning_level' ); ?></div>
                     </div>
-                </section>
 
+                </aside>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                <main class="archive-page__results facetwp-template">
+                    <?php
+                    if ( have_posts() ) {
+                        while ( have_posts() ) {
+                            the_post(); ?>
+
+                            <article>
+                                <?php wvfrm_card( get_field('youtube_url') ); ?>
+                            </article>
+
+                        <?php } // end while
+
+                        the_posts_navigation();
+                    } // end if
+                    ?>
+                </main>
+            </section>
+        </div>
+
+</div><!-- #primary -->
 
 <?php
 get_footer();

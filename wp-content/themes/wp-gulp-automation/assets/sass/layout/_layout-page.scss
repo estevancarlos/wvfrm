@@ -1,11 +1,11 @@
-.wrap-video-bg {
-  background: $wv-blue;
+#page {
+  background-color: $wv-white;
 }
 
-#page > header:first-child {
-  padding: 15px 15px;
+.page-basic__article {
+  padding: $baseline-height*2 0;
 }
 
-#content {
-
+.page-basic__header {
+  padding: $baseline-height*2 0;
 }
