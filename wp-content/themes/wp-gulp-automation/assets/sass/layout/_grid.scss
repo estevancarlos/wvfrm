@@ -93,11 +93,6 @@ $screen-xl-min:       1600px;
   }
 }
 
-
-
-
-
-
 .video article {
   @include container-fixed();
   @media (min-width: $screen-sm-min) {
@@ -109,7 +104,6 @@ $screen-xl-min:       1600px;
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }
-
   section {
     @include make-row();
   }
@@ -125,14 +119,11 @@ $screen-xl-min:       1600px;
     @include make-xs-column(2);
   }
 
-  /////////////////////
-
   @media (max-width: $screen-md-min) {
     header {
       @include make-xs-column(9);
       @include make-col-offset(0);
     }
-
     aside {
       @include make-xs-column(3);
     }
@@ -167,8 +158,6 @@ $screen-xl-min:       1600px;
     @include make-xs-column(4);
   }
 
-  /////////////////////
-
   @media (max-width: $screen-md-min) {
     .left-col {
       @include make-xs-column(8);
@@ -191,8 +180,6 @@ $screen-xl-min:       1600px;
     }
   }
 
-  /////////////////////
-
   @media (min-width: $screen-xs-min) {
     width: 100%;
   }
@@ -205,7 +192,6 @@ $screen-xl-min:       1600px;
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }
-
 }
 
 .page-basic__article-content {
@@ -224,7 +210,6 @@ $screen-xl-min:       1600px;
     @include make-col-offset(0);
   }
 }
-
 
 .footer footer {
   @include container-fixed();
@@ -250,8 +235,6 @@ $screen-xl-min:       1600px;
     @include make-xs-column(3);
   }
 
-  /////////////////////
-
   @media (max-width: $screen-sm-min) {
     .footer__menu,
     .footer__greeting {
@@ -259,7 +242,6 @@ $screen-xl-min:       1600px;
     }
   }
 }
-
 
 .aside {
   section {
@@ -281,7 +263,6 @@ $screen-xl-min:       1600px;
   @media (min-width: $screen-lg-min) {
     width: $container-lg;
   }
-
   section {
     @include make-row();
   }
@@ -309,10 +290,6 @@ $screen-xl-min:       1600px;
     }
   }
 }
-
-
-
-
 
 .results-region-container {
   @include container-fixed();
@@ -370,10 +347,3 @@ $screen-xl-min:       1600px;
     @include make-xs-column(9);
   }
 }
-
-
-
-
-/* Grid */
-
-

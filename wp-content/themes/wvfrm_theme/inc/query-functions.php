@@ -41,8 +41,6 @@ function wvfrm_related_posts_query() {
     }
 }
 
-
-
 /**
  * WP Query Posts
  */
@@ -59,5 +57,4 @@ function wvfrm_posts_query() {
     } else {
         // no posts found
     }
-
 }
